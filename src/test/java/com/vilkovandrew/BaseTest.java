@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.awt.*;
 import java.time.Duration;
 
 /**
@@ -40,7 +41,8 @@ public class BaseTest {
         options.setPageLoadTimeout(Duration.ofSeconds(120));
 
         Configuration.browserCapabilities = options;
-        Configuration.browserSize = "1920x1080";
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Configuration.browserSize = screenSize.width + "x" + screenSize.height;
     }
 
     /**
