@@ -6,8 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.awt.*;
 import java.time.Duration;
+
+import static com.codeborne.selenide.Selenide.webdriver;
 
 /**
  * Базовый класс для тестов.
@@ -41,8 +42,7 @@ public class BaseTest {
         options.setPageLoadTimeout(Duration.ofSeconds(120));
 
         Configuration.browserCapabilities = options;
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        Configuration.browserSize = screenSize.width + "x" + screenSize.height;
+        webdriver().object().manage().window().maximize();
     }
 
     /**

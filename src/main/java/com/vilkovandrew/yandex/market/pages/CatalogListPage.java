@@ -161,7 +161,9 @@ public class CatalogListPage {
         SelenideElement minValueField = filterElement.$(MIN_VALUE_RANGE_FILTER);
         SelenideElement maxValueField = filterElement.$(MAX_VALUE_RANGE_FILTER);
 
+        minValueField.click();
         minValueField.setValue(String.valueOf(minValue));
+        maxValueField.click();
         maxValueField.setValue(String.valueOf(maxValue));
 
         preloaderWait();
