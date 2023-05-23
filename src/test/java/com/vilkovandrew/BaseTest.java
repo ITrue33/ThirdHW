@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.webdriver;
 
 /**
@@ -36,12 +37,12 @@ public class BaseTest {
                 "--disable-infobars"
         );
 
-        options.addArguments("user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36\"");
+        options.addArguments("user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36\"");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.setPageLoadTimeout(Duration.ofSeconds(120));
-
         Configuration.browserCapabilities = options;
+        open();
         webdriver().object().manage().window().maximize();
     }
 

@@ -128,7 +128,7 @@ public class CatalogListPage {
      * Автор: Вилков Андрей
      * </p>
      */
-    private static final By LOCATOR_SEARCH_BUTTON = By.xpath("//button[@data-r='search-button']");
+    private static final By LOCATOR_SEARCH_BUTTON = By.xpath("//button[@*='search-button']");
 
     /**
      * Локатор для поля поиска.

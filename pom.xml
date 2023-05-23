@@ -18,7 +18,7 @@
         <aspectj.version>1.9.19</aspectj.version>
         <qameta.allure>2.21.0</qameta.allure>
         <junit.version>5.9.2</junit.version>
-        <selenide.version>6.13.0</selenide.version>
+        <selenide.version>LATEST</selenide.version>
     </properties>
 
     <dependencies>
